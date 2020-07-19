@@ -14,7 +14,7 @@ npm install @rafaelgssa/eslint-plugin-local
 
 ## Usage
 
-### ./eslint-local-rules.js
+### ./eslint-local.js
 
 ```javascript
 'use strict';
@@ -50,11 +50,11 @@ module.exports = {
 ```json
 {
 	"plugins": [
-		"@rafaelgssa/eslint-plugin-local"
+		"@rafaelgssa/local"
 	],
 
 	"rules": {
-		"local/disallow-identifiers": 2
+		"@rafaelgssa/local/disallow-identifiers": 2
 	}
 }
 ```

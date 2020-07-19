@@ -23,11 +23,11 @@ const requireUp = (fileName, cwd) => {
 	return requireUp(fileName, dir);
 };
 
-const plugin = requireUp('eslint-local-rules.js', __dirname);
+const plugin = requireUp('eslint-local.js', __dirname);
 
 if (!plugin) {
 	throw new Error(
-		`eslint-plugin-local-rules: Cannot find 'eslint-local-rules.js' (looking up from '${__dirname}').`
+		`@rafaelgssa/eslint-plugin-local: Cannot find 'eslint-local.js' (looking up from '${__dirname}').`
 	);
 }
 
