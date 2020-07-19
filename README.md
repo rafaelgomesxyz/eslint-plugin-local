@@ -1,22 +1,16 @@
-# eslint-plugin-local-rules
-A plugin for ESLint that allows you to use project-specific rules, similar to the [`--rulesdir`](http://eslint.org/docs/user-guide/command-line-interface#--rulesdir) command line option ([more](http://eslint.org/docs/developer-guide/working-with-rules#runtime-rules)).
+# eslint-plugin-local
 
-Workaround for https://github.com/eslint/eslint/issues/8769 (previously https://github.com/eslint/eslint/issues/2715).
-
-See https://github.com/taskworld/eslint-plugin-local for another solution.
-
+A fork of https://github.com/cletusw/eslint-plugin-local-rules that allows using a full local plugin instead of just rules.
 
 ## Dependencies
 
-* Requires ESLint version 0.8.0 or higher
-
+* Requires ESLint 0.8.0 or higher
 
 ## Install
 
 ```
-npm install eslint-plugin-local-rules
+npm install eslint-plugin-local
 ```
-
 
 ## Usage
 
@@ -26,26 +20,28 @@ npm install eslint-plugin-local-rules
 'use strict';
 
 module.exports = {
-  'disallow-identifiers': {
-    meta: {
-      docs: {
-        description: 'disallow identifiers',
-        category: 'Possible Errors',
-        recommended: false,
-      },
-      schema: [],
-    },
-    create: function(context) {
-      return {
-        Identifier: function(node) {
-          context.report({
-            node: node,
-            message: 'Identifiers not allowed for Super Important reasons.',
-          });
-        },
-      };
-    },
-  },
+	rules: {
+		'disallow-identifiers': {
+			meta: {
+				docs: {
+					description: 'disallow identifiers',
+					category: 'Possible Errors',
+					recommended: false,
+				},
+				schema: [],
+			},
+			create: function (context) {
+				return {
+					Identifier: function (node) {
+						context.report({
+							node: node,
+							message: 'Identifiers not allowed for Super Important reasons.',
+						});
+					},
+				};
+			},
+		},
+	},
 };
 ```
 
@@ -53,17 +49,12 @@ module.exports = {
 
 ```json
 {
-  "plugins": [
-    "eslint-plugin-local-rules"
-  ],
+	"plugins": [
+		"eslint-plugin-local"
+	],
 
-  "rules": {
-    "local-rules/disallow-identifiers": 2
-  }
+	"rules": {
+		"local/disallow-identifiers": 2
+	}
 }
 ```
-
-
-## License
-
-MIT
