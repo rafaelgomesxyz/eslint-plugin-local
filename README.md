@@ -9,7 +9,7 @@ A fork of https://github.com/cletusw/eslint-plugin-local-rules that allows using
 ## Install
 
 ```
-npm install eslint-plugin-local
+npm install @rafaelgssa/eslint-plugin-local
 ```
 
 ## Usage
@@ -50,7 +50,7 @@ module.exports = {
 ```json
 {
 	"plugins": [
-		"eslint-plugin-local"
+		"@rafaelgssa/eslint-plugin-local"
 	],
 
 	"rules": {

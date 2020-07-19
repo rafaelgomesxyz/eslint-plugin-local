@@ -1,5 +1,5 @@
 {
-	"name": "eslint-plugin-local",
+	"name": "@rafaelgssa/eslint-plugin-local",
 	"version": "1.0.0",
 	"description": "A plugin for ESLint that allows you to use local plugins.",
 	"author": "rafaelgssa",
